@@ -233,7 +233,12 @@ img {
 
 
 
-
+.section-content{
+  position:fixed;
+  background-color: #fff;
+  top:50%;
+  left:50%;
+}
 
 
 
