@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css" />	
-
+	<script src="./firebase.js" defer type="module"></script>
 </head>
 
-<figure class="vid">
+<figure class="vid" >
 	<video loop="loop" muted autoplay >
 		<source src="./img/tea.mp4" type="video/mp4" />
 	</video>
@@ -64,8 +64,7 @@
 			const characterImage = document.getElementById('characterImage');
 			characterImage.src = imagePath;
 
-	});
-addEventListener   
+	});   
 </script>
 
 
@@ -92,9 +91,15 @@ addEventListener
 	<p>주요 캐릭터 정보...</p>
 </div>
 <div id="community-section" class="section-content">
-	<h2>커뮤니티 섹션</h2>
-	<p>커뮤니티 활동 내용...</p>
+	<div class="input">
+		<button id='google-login-btn' class="google-button"	>
+		<i class="fab fa-google"></i>Login with Google	
+	</button>
+	</div>
 </div>
+
+
+
 
 <script>
 
@@ -133,9 +138,6 @@ window.onload = function() {
 			}
 	}
 </script>
-
-
-
 
 
   </body>
