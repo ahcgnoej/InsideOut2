@@ -7,49 +7,70 @@
   <link rel="stylesheet" href="./css/style.css" />	
 
 </head>
-  <figure class="vid">
-		<video loop="loop" muted autoplay >
-			<source src="./img/tea.mp4" type="video/mp4" />
-		</video>
-  </figure>
 
-  <figure class="vid2">
-		<video loop="loop" muted  autoplay >
-			<source src="./img/tea.mp4" type="video/mp4" />
-		</video>
-  </figure>
+<figure class="vid">
+	<video loop="loop" muted autoplay >
+		<source src="./img/tea.mp4" type="video/mp4" />
+	</video>
+</figure>
+
+<figure class="vid2">
+	<video loop="loop" muted  autoplay >
+		<source src="./img/tea.mp4" type="video/mp4" />
+	</video>
+</figure>
 
 
-  <h1><img src="./img/pngegg.png"/></h1>
-  
-  <header>		
-		<ul id="gnb">
-      <li>
-				<a href="#"><em>Teaser trailer</em></a>				
-			</li>
-			<li>
-				<a href="#"><em>Info</em></a>				
-			</li>
-			<li>
-				<a href="#"><em> Review</em></a>
-			</li>
-			<li>
-				<a href="#"><em>Character</em></a>
-			</li>
-			<li>				
-				<a href="#"><em>Community</em></a>
-			</li>	
-		</ul>
-	</header>
-
-  <ul id="sns">
-		<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-		<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-		<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-		<li><a href="#"><i class="fa fa-android"></i></a></li>
+<h1><img src="./img/pngegg.png"/></h1>
+<header>		
+	<ul id="gnb">
+		<li class="selected">
+			<a href="#"><em>Teaser trailer</em></a>				
+		</li>
+		<li>
+			<a href="#"><em>Info</em></a>				
+		</li>
+		<li>
+			<a href="#"><em> Review</em></a>
+		</li>
+		<li>
+			<a href="#"><em>Character</em></a>
+		</li>
+		<li>				
+			<a href="#"><em>Community</em></a>
+		</li>	
 	</ul>
+</header>
 
+<div class="t">
+	<div class="text">
+		<p id="inside">Inside</p>
+		<p>OUT2</p>
+	</div>
+	<div class='day'>
+		<p id="p1"><em id="em1">2024년 06월 12일</em></p>
+		<p id="p2"><em id="em2">IMAX 극장 대개봉</em></p>
+	</div>
+	<div id="ticket">
+		<p id="random">Random Character Poster</p>
+		<div class="con">
+			<a href=# id="characterLink"><img src="./img/기쁨5.png"id="characterImage" /></a>
+		</div>	
+	</div>
+</div>
+
+<script>
+	const characters = ["불안1", "부럽2", "당황3", "따분4", "기쁨5", "슬픔6", "버럭7", "소심8", "까칠9"];
+
+	document.getElementById('random').addEventListener('mouseover', function() {
+			const randomNumber = Math.floor(Math.random() * 8);
+			const imagePath = `./img/${characters[randomNumber]}.png`;
+			const characterImage = document.getElementById('characterImage');
+			characterImage.src = imagePath;
+	
+	});
+addEventListener   
+</script>
 
   </body>
 </html>
