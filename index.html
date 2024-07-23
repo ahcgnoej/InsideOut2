@@ -14,33 +14,29 @@
 	</video>
 </figure>
 
-<figure class="vid2">
-	<video loop="loop" muted  autoplay >
-		<source src="./img/tea.mp4" type="video/mp4" />
-	</video>
-</figure>
 
 
 <h1><img src="./img/pngegg.png"/></h1>
 <header>		
 	<ul id="gnb">
-		<li class="selected">
-			<a href="#"><em>Teaser trailer</em></a>				
+		<li >
+			<a href="#" onclick="showSection('teaser')"><em>Teaser trailer</em></a>				
 		</li>
 		<li>
-			<a href="#"><em>Info</em></a>				
+			<a href="#info" onclick="showSection('info')"><em>Info</em></a>				
 		</li>
 		<li>
-			<a href="#"><em> Review</em></a>
+			<a href="#review"onclick="showSection('review')"><em> Review</em></a>
 		</li>
 		<li>
-			<a href="#"><em>Character</em></a>
+			<a href="#character" onclick="showSection('character')"><em>Character</em></a>
 		</li>
 		<li>				
-			<a href="#"><em>Community</em></a>
+			<a href="#community"onclick="showSection('community')"><em>Community</em></a>
 		</li>	
 	</ul>
 </header>
+
 
 <div class="t">
 	<div class="text">
@@ -54,7 +50,7 @@
 	<div id="ticket">
 		<p id="random">Random Character Poster</p>
 		<div class="con">
-			<a href=# id="characterLink"><img src="./img/기쁨5.png"id="characterImage" /></a>
+			<a onclick="showSection('character')" id="characterLink"><img src="./img/기쁨5.png"id="characterImage" /></a>
 		</div>	
 	</div>
 </div>
@@ -67,10 +63,80 @@
 			const imagePath = `./img/${characters[randomNumber]}.png`;
 			const characterImage = document.getElementById('characterImage');
 			characterImage.src = imagePath;
-	
+
 	});
 addEventListener   
 </script>
+
+
+
+<!-- 각 섹션의 내용을 담는 div -->
+<div id="teaser-section" class="section-content">
+	<figure class="vid2">
+		<video loop="loop" muted  autoplay >
+			<source src="./img/tea.mp4" type="video/mp4" />
+		</video>
+	</figure>
+	
+</div>
+<div id="info-section" class="section-content">
+	<h2>정보 섹션</h2>
+	<p>영화 정보 관련 내용...</p>
+</div>
+<div id="review-section" class="section-content">
+	<h2>리뷰 섹션</h2>
+	<p>리뷰 관련 내용...</p>
+</div>
+<div id="character-section" class="section-content">
+	<h2>캐릭터 섹션</h2>
+	<p>주요 캐릭터 정보...</p>
+</div>
+<div id="community-section" class="section-content">
+	<h2>커뮤니티 섹션</h2>
+	<p>커뮤니티 활동 내용...</p>
+</div>
+
+<script>
+
+// 페이지 로드 후 초기화 함수 실행
+window.onload = function() {
+	// 처음에 표시될 섹션 ID 설정 (여기서는 'teaser'를 선택)
+	const initialSectionId = 'teaser';
+	
+	// 초기화 함수 호출하여 특정 섹션 표시 및 네비게이션 항목 선택
+	showSection(initialSectionId);
+};
+
+	function showSection(sectionId) {
+			// 모든 섹션 숨기기
+			const sections = document.querySelectorAll('.section-content');
+			sections.forEach(section => {
+					section.style.display = 'none';
+			});
+
+
+			// 선택된 섹션 보이기
+			const selectedSection = document.getElementById(`${sectionId}-section`);
+			if (selectedSection) {
+					selectedSection.style.display = 'block';
+			}
+			
+			// 선택된 네비게이션 항목 표시
+			const gnbItems = document.querySelectorAll('#gnb li');
+			gnbItems.forEach(item => {
+					item.classList.remove('selected');
+			});
+
+			const selectedNavItem = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+			if (selectedNavItem) {
+					selectedNavItem.parentElement.classList.add('selected');
+			}
+	}
+</script>
+
+
+
+
 
   </body>
 </html>
