@@ -16,199 +16,36 @@ img { border:0;}
 body { position:fixed;  width:100%; height:100%; background:#111;}
 
 /* 배경 동영상 */
-.vid { filter: blur(15px); position:absolute; object-fit: cover; transform: scale(1.48); }
+.vid { top:5%; filter: blur(15px); position:absolute; object-fit: cover; transform: scale(1.48); }
 /* 와 transform: scale(1.48); 이거로 영상 세로확대 가능 */
 
-/* teaser trailer */
-.vid2 {
-  width: 40%; /* 원하는 크기로 조정하세요 */
-  height: 50%; /* 원하는 크기로 조정하세요 */
-  position: fixed;
-  top: 50%; /* 세로 중앙 정렬 */
-  left: 43%; /* 가로 중앙 정렬 */
-  transform: translate(-50%, -50%);
-  z-index: 1; /* 배경 동영상 위에 있도록 설정 */
-}
+/* header */
+.header { width: 20%; max-width:237px; height: 100%; position: fixed; background: rgba(139, 215, 118, 0.5); display: flex; flex-direction: column; justify-content: center;}
+#logo { position: absolute; top: 5%; padding-inline: 20px;}
+#logo img {display:block; width:100%; height:auto;}
+#gnb a { display: block; width: 100%; height: 20%; font: bold 18px/3 'Play';
+ font-size:1.4vw; color: #28375b; box-sizing: border-box; text-align: center; }
+.selected a{ background: rgba(94, 165, 180, 0.8); }
 
-.vid2 video { 
-  position: absolute; /* .vid의 부모 요소에 대해 절대 위치 설정 */
-  width: 100%; /* 비디오를 컨테이너의 너비와 맞춤 */
-  height: 100%; /* 비디오를 컨테이너의 높이와 맞춤 */
-  object-fit: cover; /* 비디오가 컨테이너를 완전히 덮도록 설정 */
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-/**/
-h1 {
-  position: fixed;
-  top: 5%;
-  left: 2%;
-  z-index: 10;
-}
-
-h1 img {
-  width: 16%;
-  height: auto;
-}
-
-header {
-  width: 20%;
-  max-width:237px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(139, 215, 118, 0.5);
-}
-
-
-/* 1depth*/
-/* 1depth */
-#gnb {
-  width: 100%; /* 전체 너비를 사용 */
-  max-width: 270px; /* 최대 너비를 270px로 제한 */
-  position: absolute;
-  top: 27%;
-}
-
-#gnb>li {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-#gnb a {
-  display: block;
-  width: 100%; /* 부모 요소에 맞춰 전체 너비 사용 */
-  height: 20%;
-
-  font: bold 18px/3 'Play';
-  font-size:1.4vw;
-  color: #28375b;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-#gnb>li.on>a {
-  background: #000;
-  color: #fff;
-}
-
-.selected a{
-  background: rgba(94, 165, 180, 0.8);
-  color: #fff;
-}
-
-#gnb>li:hover>a {
-  background: rgba(94, 165, 180, 0.8);
-}
-
+/* 오른쪽 텍스트 */
 .t{
-  position: fixed;
-  top: 80px;
-  left:70%;
-  display: flex;
-  flex-direction: column;
+  position: fixed; height: 100%; left:70.5%; display: flex; flex-direction: column; justify-content: center;  font-family: 'Intensa Fuente'; font-size:2vw; color: #fff; text-align: center; gap:3vw;
 }
+.t .text{ font-size: 7vw; }
+.t .day { font-family: 'play'; font-weight: 600; font-size: 2.5vw; }
+.day p { font-size: 3vw; margin-top: 13px;}
+.t .con { background-color: rgba(94, 165, 180, 2); font: bold 2vw 'Play', sans-serif; padding: 8px; cursor:pointer; }
 
+/* 랜덤 캐릭터 이미지 */
+.random { top:50%; transform: translate(0%, -50%);  position: fixed; display: flex; flex-direction: row; width:75.6%; transition:all 1s; right:-1500px; pointer-events: none; z-index: 3;} 
+#characterTextDiv { position: relative; width: 100%; background-color: #0c0c0c; opacity: 95%; }
+#characterImageDiv { position: relative; width: 50%;}
+#characterImage {  position:relative;  width:100%; transform: scale(1.1); }
 
-.t p{
-  font-family: 'Intensa Fuente';
-font-size:7vw;
-color: #fff;
-margin-bottom: -15px;
-text-align: center;
-}
+/* teaser trailer */
+.vid2 { width: 105%; height: 105%; position:absolute; }
+.vid2 video { position: absolute; width: 100%; height: 100%; object-fit: cover; }
 
-.day #p2{
-  margin-top:-20px;
-}
-
-p #em1{
-  font: bold 1.7vw 'Play', sans-serif;
-color: #fff;
-font-display: center;
-}
-
-p #em2{
-  font: bold 3vw 'Play', sans-serif;
-color: #fff;
-}
-
-#ticket{
-  margin-top: 50px;
-  display: flex;
-
-width: 25vw;
-height: 4vw;
-  background-color: rgba(94, 165, 180, 2);;
-align-items: center; /* 가로 가운데 정렬 */
-  justify-content: center; 
-}
-
-#ticket p{
-  font: bold 2vw 'Play', sans-serif;
-padding-bottom: 15px;;
-}
-
-
-
-
-
-/* contents 레이아웃 */
-#ticket:hover { right:-1800px; opacity:1;}
-
-.con { display: flex; flex-direction: row; width:100%; height:100%; position:absolute; left:120%; bottom:4%; 	padding:10px; transition:all  1s;}
-
-#ticket:hover .con { left:-50px;}
-
-img {
-  position:relative;
-  width: 120%;
-  height:110%;
-}
-
-@keyframes ani {
-	0% { right:0px; transform:sclae(1); opacity:1;}
-	100% { right:100px; transform:scale(1.5); opacity:0;}
-}
-
-
-
-.section-content{
-  position:fixed;
-  background-color: #fff;
-  top:50%;
-  left:50%;
-}
-
-
-
-
-
-
-/*  
-.info-box{
-  width: 40%; 
-  height: 50%;
-  position: fixed;
-  top: 50%; 
-  left: 45%;
-  transform: translate(-50%, -50%);
-  z-index: 1; 
-  background-color: white;
-  border: 2px solid black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}  
- */
-
+/* info, review 페이지 */
+.section-content{ position:fixed; background-color: #fff; width: 40%; height: 50%; top: 50%; left: 43%; transform: translate(-50%, -50%); }
 
